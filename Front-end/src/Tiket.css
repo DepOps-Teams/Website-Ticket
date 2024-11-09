@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #5c32a1;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.concert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.concert-card {
+  display: flex;
+  background-color: white;
+  background-image:url(https://pin.it/2ASS3jf71);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.concert-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.concert-buttons {
+  margin-top: 10px;
+}
+
+.buy-button {
+  background-color: green;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: red;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  background-color: darkgreen;
+}
+
+.cancel-button:hover {
+  background-color: darkred;
+}

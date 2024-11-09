@@ -1,0 +1,137 @@
+.profile-page {
+  font-family: Arial, sans-serif;
+
+  min-height: 100vh;
+}
+
+p{
+  align-items: center;
+  text-align: center;
+
+}
+header {
+  background-color: #6c4bb1;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 0.5rem;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  margin-right: 0.5rem;
+}
+
+
+.user-icon {
+  background-color: #ccc;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.profile-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+.profile-card p {
+  max-width: 600px;
+  text-align: center;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.action-button {
+  background-color: transparent;
+  border: none;
+  color: #6c4bb1;
+  cursor: pointer;
+}
+
+.edit-profile-button {
+  background-color: #6c4bb1;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.privacy-notice {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 1rem;
+  text-align: end;
+  
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}

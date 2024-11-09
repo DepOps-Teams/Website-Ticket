@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "artist": "Ed-Sheeran",
+    "location": "Medan",
+    "date": "20 Oct 2024",
+    "time": "19.00 - 21.00",
+    "price": "Rp.25.000.000,00",
+    "image": "./ed.jpg"
+  },
+  {
+    "id": 2,
+    "artist": "Avanged Sevenfold",
+    "location": "Jakarta",
+    "date": "22 Mei 2025",
+    "time": "20.00 - 22.00",
+    "price": "Rp.30.000.000,00",
+    "image": "/a7x.jpg"
+  },
+  {
+    "id": 3,
+    "artist": "Bruno Mars",
+    "location": "Surabaya",
+    "date": "5 Nov 2024",
+    "time": "19.00 - 21.00",
+    "price": "Rp.25.000.000,00",
+    "image": "/Bruno Mars.jpeg"
+  }
+]
