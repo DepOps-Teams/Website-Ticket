@@ -15,7 +15,9 @@ const Header = () => {
         <div className="nav-container">
           <span className="logo" ><img src="./image/musikal.png" alt="Logo" /></span>
           <nav className="nav-links">
-            <a href="/home" className="nav-link">Home</a>
+            <button onClick={()=> {
+              navigate('/home')
+            }} ClassName="nav-link">Home</button>
             <a href="/history" className="nav-link">Histori</a>
             <a href="/tiket" className="nav-link">Tiket</a>
           </nav>
