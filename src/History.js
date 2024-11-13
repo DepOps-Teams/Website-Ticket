@@ -80,7 +80,7 @@ function Tiket() {
   }
 
   useEffect(() => {
-    // showData();
+    showData();
   },[])
 
   if(load) {
