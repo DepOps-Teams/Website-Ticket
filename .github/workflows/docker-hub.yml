@@ -8,7 +8,7 @@ env:
   # Use docker.io for Docker Hub if empty 
   REGISTRY: docker.io 
   # dockerhub.repository as <account>/<repo> 
-  IMAGE_NAME: ${{ secrets.asriazhari }}/Website-Ticket
+  IMAGE_NAME: ${{ secrets.asriazhari }}/website-ticket
 jobs: 
   build: 
     runs-on: ubuntu-latest 
