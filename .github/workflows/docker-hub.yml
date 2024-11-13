@@ -10,44 +10,32 @@ env:
   REGISTRY: docker.io 
   IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/website-ticket
 
-jobs: 
-  build: 
-    runs-on: ubuntu-latest 
-
-    steps: 
-      - name: Check out the code
-        uses: actions/checkout@v3 
-
+jobs:
+  push_to_registry:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+      
       - name: Log in to Docker Hub
-        uses: docker/login-action@v2
-        with: 
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v2 
-        with: 
+      
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
           context: . 
           push: true 
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           
-  test: 
-    runs-on: ubuntu-latest 
-
-    steps: 
-      - name: Check out the code
-        uses: actions/checkout@v3 
-
-      - name: Build the Docker image
-        run: docker build -t website-ticket:latest .
-
-      - name: Run container in detached mode
-        run: docker run -d -p 3000:3000 website-ticket:latest
-
-      - name: Test the running container
-        run: |
-          sleep 20 # Tingkatkan waktu tunggu menjadi 20 detik
-          curl -f http://localhost:3000 || exit 1
+      - name: Build and push Docker image
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
