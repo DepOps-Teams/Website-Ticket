@@ -1,6 +1,6 @@
 FROM node
-WORKDIR / client
-COPY package.json /client
+WORKDIR / login-page
+COPY package.json /login-page
 RUN npm install -g http-server
-COPY . /client
+COPY . /login-page
 CMD ["http-server", "-c", "-1"]
