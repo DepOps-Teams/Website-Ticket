@@ -6,7 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000" # Peta port 3000 di host ke port 3000 di container
+      - "8080:3000" # Peta port 8080 di container ke port 3000 di host
     environment:
       - NODE_ENV=production
-    restart: always # Opsional, agar container restart jika ada kegagalan
