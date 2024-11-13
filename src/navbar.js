@@ -18,8 +18,12 @@ const Header = () => {
             <button onClick={()=> {
               navigate('/home')
             }} ClassName="nav-link">Home</button>
-            <a href="/history" className="nav-link">Histori</a>
-            <a href="/tiket" className="nav-link">Tiket</a>
+            <button onClick={()=> {
+              navigate('/history')
+            }} ClassName="nav-link">History</button>
+            <button onClick={()=> {
+              navigate('/tiket')
+            }} ClassName="nav-link">Tiket</button>
           </nav>
         </div>
         <div className="search-profile-container">
