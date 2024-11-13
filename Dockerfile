@@ -20,7 +20,7 @@ RUN npm run build
 RUN npm install -g http-server
 
 # Atur command untuk menjalankan server di folder build pada port 3000
-CMD ["http-server", "build", "-p", "3000", "-c-1"]
+CMD ["http-server", "build", "-p", "3000", "-c-1", "--spa"]
 
 # Pastikan port 3000 diekspos
 EXPOSE 3000
