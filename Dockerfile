@@ -19,5 +19,5 @@ RUN npm run build
 # Install http-server secara global untuk menyajikan build
 RUN npm install -g http-server
 
-# Atur command untuk menjalankan server di port 3000
-CMD ["http-server", "build", "-p", "3000", "-c-1"]
+# Atur command untuk menjalankan server di folder build
+CMD ["http-server", "build", "-c-1"]
