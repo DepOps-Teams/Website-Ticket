@@ -45,9 +45,9 @@ jobs:
         run: docker build -t website-ticket:latest .
 
       - name: Run container in detached mode
-        run: docker run -d -p 3000:8080 website-ticket:latest
+        run: docker run -d -p 3000:3000 website-ticket:latest
 
       - name: Test the running container
         run: |
-          sleep 10
+          sleep 20 # Tingkatkan waktu tunggu menjadi 20 detik
           curl -f http://localhost:3000 || exit 1
