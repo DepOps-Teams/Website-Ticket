@@ -1,6 +1,6 @@
 FROM node
-WORKDIR / login-page
-COPY package.json /login-page
+WORKDIR / Website-Ticket
+COPY package.json /Website-Ticket
 RUN npm install -g http-server
-COPY . /login-page
+COPY . /Website-Ticket
 CMD ["http-server", "-c", "-1"]
