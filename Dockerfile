@@ -11,7 +11,7 @@ COPY package.json /Website-Ticket/
 RUN npm install
 
 # Salin semua file proyek ke dalam container
-COPY . .
+COPY . /Website-Ticket/
 
 # Build aplikasi untuk produksi
 RUN npm run build
@@ -20,7 +20,7 @@ RUN npm run build
 RUN npm install -g http-server
 
 # Atur command untuk menjalankan server di folder build pada port 3000
-CMD ["http-server", "build", "-p", "3000", "-c-1", "--spa", ]
+CMD ["http-server", "build", "-p", "3000", "-c-1", "--spa",]
 
 # Pastikan port 3000 diekspos
 EXPOSE 3000
