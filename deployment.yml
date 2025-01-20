@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: website-ticket
-        image: docker.io/${{ secrets.DOCKER_USERNAME }}/website-ticket:latest # Gambar Docker dari Docker Hub
+        image: image: docker.io/asriazhari/website-ticket:latest # Gambar Docker dari Docker Hub
         ports:
         - containerPort: 3000 # Port yang digunakan aplikasi
         resources:
