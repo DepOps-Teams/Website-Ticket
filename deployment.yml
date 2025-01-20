@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website-ticket
+  labels:
+    app: website-ticket
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: website-ticket
+  template:
+    metadata:
+      labels:
+        app: website-ticket
+    spec:
+      containers:
+      - name: website-ticket
+        image: docker.io/${{ secrets.DOCKER_USERNAME }}/website-ticket:latest # Gambar Docker dari Docker Hub
+        ports:
+        - containerPort: 3000 # Port yang digunakan aplikasi
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: website-ticket-service
+spec:
+  selector:
+    app: website-ticket
+  ports:
+    - protocol: TCP
+      port: 3000 # Port untuk akses service
+      targetPort: 3000 # Port aplikasi di dalam container
+  type: LoadBalancer
