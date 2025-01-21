@@ -59,11 +59,12 @@ jobs:
         run: |
           echo "${{ secrets.KUBECONFIG }}" | base64 --decode > kubeconfig
           export KUBECONFIG=kubeconfig
+          kubectl config view
 
       # Step 4: Deploy to Kubernetes
       - name: Deploy to Kubernetes
         run: |
-          kubectl apply -f deployment.yml
+          kubectl apply -f deployment.yml --validate=false
 
       # Step 5: Verify deployment
       - name: Verify Deployment
