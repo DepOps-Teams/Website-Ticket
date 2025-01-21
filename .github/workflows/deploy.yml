@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/website-ticket
+  IMAGE_NAME: asriazhari/website-ticket
 
 jobs:
   build-and-push:
