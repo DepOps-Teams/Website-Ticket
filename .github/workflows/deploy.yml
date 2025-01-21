@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: asriazhari/website-ticket
+  IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/website-ticket
 
 jobs:
   build-and-push:
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
+      # Step 1: Checkout repository
       - name: Checkout Code
         uses: actions/checkout@v3
 
@@ -44,7 +44,7 @@ jobs:
     needs: build-and-push
 
     steps:
-      # Step 1: Checkout the repository
+      # Step 1: Checkout repository
       - name: Checkout Code
         uses: actions/checkout@v3
 
@@ -60,7 +60,12 @@ jobs:
           echo "${{ secrets.KUBECONFIG }}" | base64 --decode > kubeconfig
           export KUBECONFIG=kubeconfig
 
-      # Step 4: Update Kubernetes deployment
+      # Step 4: Deploy to Kubernetes
       - name: Deploy to Kubernetes
         run: |
           kubectl apply -f deployment.yml
+
+      # Step 5: Verify deployment
+      - name: Verify Deployment
+        run: |
+          kubectl rollout status deployment/website-ticket
