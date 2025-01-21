@@ -15,17 +15,17 @@ spec:
         app: website-ticket
     spec:
       containers:
-      - name: website-ticket
-        image: image: docker.io/asriazhari/website-ticket:latest # Gambar Docker dari Docker Hub
-        ports:
-        - containerPort: 3000 # Port yang digunakan aplikasi
-        resources:
-          requests:
-            cpu: "250m"
-            memory: "128Mi"
-          limits:
-            cpu: "500m"
-            memory: "256Mi"
+        - name: website-ticket
+          image: docker.io/asriazhari/website-ticket:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
 ---
 apiVersion: v1
 kind: Service
@@ -36,6 +36,6 @@ spec:
     app: website-ticket
   ports:
     - protocol: TCP
-      port: 3000 # Port untuk akses service
-      targetPort: 3000 # Port aplikasi di dalam container
+      port: 3000
+      targetPort: 3000
   type: LoadBalancer
